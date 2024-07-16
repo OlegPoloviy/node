@@ -1,0 +1,19 @@
+{
+  "name": "system_oleg",
+  "version": "1.0.0",
+  "main": "mySystem.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "nodemon": "^3.1.4",
+    "os": "^0.1.2",
+    "system_oleg": "^1.0.0"
+  }
+}
