@@ -1,0 +1,36 @@
+№1
+ SELECT name,financing,id FROM departments;
+ №2
+ SELECT name as GroupName,rating as GroupRating FROM groups;
+ №3
+  SELECT surname,salary + premium FROM teachers;
+  №4
+ SELECT 
+    'The dean of faculty ' || name || ' is ' || dean || '.' AS faculty_info
+FROM 
+    faculties;
+	
+№5
+SELECT surname FROM teachers WHERE isprofessor='true' AND salary>1050;
+	
+№6
+SELECT name FROM departments WHERE financing <11000 OR financing >25000;
+№7
+SELECT * FROM departments WHERE name!='Computer Science';
+№8
+SELECT surname,position FROM teachers WHERE isprofessor='false';
+№9
+ SELECT surname,position,salary,premium FROM teachers WHERE isassistant='true' AND premium >160 AND premium <550;
+№10
+SELECT surname,salary FROM teachers WHERE isassistant='true';
+№11
+SELECT surname,position FROM teachers WHERE employmentdate<'01.01.2000';
+№12
+SELECT name AS Name_of_department FROM departments WHERE name <'Software Development' ORDER BY name;
+№13
+SELECT surname FROM teachers WHERE isassistant='true' AND salary+premium<1200;
+№14
+SELECT name FROM groups WHERE year=5 AND rating BETWEEN 2 AND 4;
+№15
+SELECT surname FROM teachers WHERE isassistant='true' AND salary<5
+50 OR premium <200;
