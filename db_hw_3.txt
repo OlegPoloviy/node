@@ -1,0 +1,29 @@
+№1
+SELECT teachers.name AS teacher_name, groups.name AS group_name
+FROM teachers
+INNER JOIN lectures ON lectures.teacherid = teachers.id
+INNER JOIN group_lectures ON group_lectures.lecture_id = lectures.id
+INNER JOIN groups ON group_lectures.group_id = groups.id;
+№2
+SELECT faculties.name 
+FROM faculties
+INNER JOIN departments ON faculty_id = faculties.id WHERE departments.financing > faculties.financing;
+№3
+SELECT curators.name,groups.name
+FROM curators
+INNER JOIN groups_curators ON groups_curators.id=curators.id
+INNER JOIN groups ON groups_curators.group_id = groups.id;
+№4
+SELECT teachers.name,teachers.surname
+FROM teachers
+INNER JOIN lectures ON lectures.teacherid=teachers.id
+INNER JOIN group_lectures ON lectures.id=group_lectures.lecture_id WHERE group_lectures.lecture_id = 13;
+//13 - id P107
+№5
+SELECT teachers.surname,faculties.name
+FROM teachers
+INNER JOIN lectures ON lectures.teacherid=teachers.id
+INNER JOIN group_lectures ON lectures.id=group_lectures.lecture_id
+INNER JOIN groups ON group_lectures.group_id = groups.id
+INNER JOIN departments ON groups.department_id = departments.id
+INNER JOIN faculties ON departments.faculty_id = faculties.id;
