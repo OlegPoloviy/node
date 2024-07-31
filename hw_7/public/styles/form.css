@@ -1,0 +1,39 @@
+.form-container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+.phone-input {
+    position: relative;
+}
+.phone-input input {
+    padding-left: 40px;
+}
+.phone-input::before {
+    content: "+38";
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+    font-size: 1rem;
+}
+.form-label {
+    font-weight: bold;
+}
+.btn-primary {
+    background-color: #e30613;
+    border: none;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.your-order{
+    display: none;
+    width: 50%;
+    border: 1px solid #6c757d;
+}

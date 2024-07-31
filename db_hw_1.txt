@@ -1,0 +1,22 @@
+CREATE DATABASE Academy;
+CREATE DATABASE
+
+/c Academy
+                                                             ^
+postgres=# CREATE TABLE Groups(id SERIAL PRIMARY KEY,Name VARCHAR(10) NOT NULL CHECK(length(name)!=0) UNIQUE,Rating INTEGER NOT NULL CHECK(Rating>=1 AND Rating<=5),Year INTEGER NOT NULL CHECK(Year>=1 AND Year<=5));
+CREATE TABLE
+
+postgres=# CREATE TABLE Departments (
+postgres(#     id SERIAL PRIMARY KEY,
+postgres(#     Financing NUMERIC(15, 2) NOT NULL CHECK(Financing >= 0) DEFAULT 0,
+postgres(#     Name VARCHAR(100) NOT NULL CHECK(length(Name) != 0) UNIQUE
+postgres(# );
+CREATE TABLE
+
+postgres=# CREATE TABLE Faculties(id SERIAL PRIMARY KEY,Name VARCHAR(100) NOT NULL CHECK(length(Name)!=0) UNIQUE);
+CREATE TABLE
+
+postgres=# CREATE TABLE Teachers(id SERIAL PRIMARY KEY,EmploymentDate DATE NOT NULL CHECK(EmploymentDate >= '01.01.1990.'),Name VARCHAR(1000) NOT NULL CHECK(length(Name)!=0),Premium NUMERIC(15, 2) NOT NULL CHECK(Premium > 0) DEFAULT 0,Salar
+y NUMERIC(15, 2) NOT NULL CHECK(Salary > 0),Surname VARCHAR(1000) NOT NULL CHECK(length(Surname) > 0));
+CREATE TABLE
+postgres=#
