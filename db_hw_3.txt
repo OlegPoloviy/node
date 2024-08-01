@@ -1,3 +1,62 @@
+ALTER TABLE faculties
+ADD COLUMN financing DECIMAL(10, 2);
+
+UPDATE faculties
+SET financing = 8809.00
+WHERE id = 44;  -- Engineering
+
+UPDATE faculties
+SET financing = 7500.00
+WHERE id = 3;   -- Accounting
+
+UPDATE faculties
+SET financing = 5591.00
+WHERE id = 41;  -- Legal
+
+UPDATE faculties
+SET financing = 8998.00
+WHERE id = 10;  -- Sales
+
+UPDATE faculties
+SET financing = 2109.00
+WHERE id = 15;  -- Training
+
+UPDATE faculties
+SET financing = 6190.00
+WHERE id = 48;  -- Marketing
+
+UPDATE faculties
+SET financing = 7001.00
+WHERE id = 7;   -- Services
+
+UPDATE faculties
+SET financing = 1815.00
+WHERE id = 11;  -- Business Development
+
+UPDATE faculties
+SET financing = 2298.00
+WHERE id = 6;   -- Product Management
+
+UPDATE faculties
+SET financing = 2084.00
+WHERE id = 4;   -- Human Resources
+
+UPDATE faculties
+SET financing = 9176.00
+WHERE id = 5;   -- Research and Development
+
+UPDATE faculties
+SET financing = 4944.00
+WHERE id = 2;   -- Support
+
+INSERT INTO groups(id,name,rating,year,department_id) VALUES (13,'P107',5,3,10);
+
+INSERT INTO lectures(lectureroom,teacherid,subject_id) VALUES ('115',5,2);
+
+INSERT INTO group_lectures(group_id,lecture_id) VALUES (13,5);
+
+
+
 №1
 SELECT teachers.name AS teacher_name, groups.name AS group_name
 FROM teachers
