@@ -1,0 +1,59 @@
+.footer{
+    background-color: #FFFF;
+    position: relative;
+    top: 700px;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.text_about{
+    display: flex;
+    width: 20%;
+    height: 40%;
+    flex-direction: column;
+    position: relative;
+    /* bottom: 50px; */
+}
+
+.text_about h2{
+    font-size: 28px;
+}
+
+.text_about p{
+    font-size: 15px;
+}
+
+.right_container{
+    display: flex;
+    width: 70%;
+    position: relative;
+    /* bottom:50px; */
+    top: 20px;
+    font-size: 17px;
+    justify-content: space-around;
+}
+
+.services{
+    width: 33%;
+}
+#service{
+    color: #F6973F;
+}
+
+#f_1{
+    color: #F6973F;
+}
+
+.furniture{
+    width: 33%;
+}
+
+.social{
+    width: 33%;
+}
+
+#follow{
+    color: #F6973F;
+}
