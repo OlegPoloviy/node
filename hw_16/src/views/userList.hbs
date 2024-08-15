@@ -1,0 +1,29 @@
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Login</th>
+        <th scope="col">Email</th>
+        <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each users}}
+        <tr>
+            <th scope="row">{{id}}</th>
+            <td>{{login}}</td>
+            <td>{{email}}</td>
+            <td>
+                <a href="/user/delete/{{id}}">
+                    <img src="/images/trash.png" alt="delete" style="width: 50px">
+                </a>
+            </td>
+            <td>
+                <a href="/user/change">
+                    <img src="/images/img.png" alt="" style="width: 30px;margin-top: 10px">
+                </a>
+            </td>
+        </tr>
+    {{/each}}
+    </tbody>
+</table>

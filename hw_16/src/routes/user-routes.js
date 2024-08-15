@@ -66,4 +66,39 @@ user_router.post("/", (req, res) => {
 user_router.get("/", secure.authenticateToken, (req, res) => {
   res.send(req.user);
 });
+
+user_router.get("/list",async (req,res) => {
+  const users = await User.getUsers();
+  console.log(users);
+  res.render("userList",{users : users});
+});
+
+user_router.get("/delete/:id", async (req, res) => {
+  const userId = req.params.id;
+  try {
+    await User.deleteUser(userId);
+    res.redirect("/user/list");
+  } catch (error) {
+    console.error("Error deleting user:", error);
+    res.status(500).send("Error deleting user");
+  }
+});
+
+user_router.get("/change",(req,res) => {
+  res.render("change")
+});
+
+user_router.post("/change",async (req,res)  => {
+  const {changeLogin,changeEmail,changeID} = req.body;
+  console.log(req.body)
+  try{
+    const changed = await User.updateUser(changeLogin,changeEmail,changeID);
+    console.log(changed);
+    res.redirect("/user/list");
+  }catch(err){
+    console.log(err);
+    res.status(500).send("Server error =(");
+  }
+})
+
 export default user_router;

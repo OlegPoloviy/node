@@ -37,6 +37,29 @@ class User {
 
     return foundUser;
   }
+
+  async getUsers(){
+    const users = await dbconfig.query(
+        "SELECT * FROM users"
+    );
+    return  users.rows;
+  }
+
+  async deleteUser(data){
+    const deleteUser = await dbconfig.query(
+        "DELETE FROM users WHERE id=$1 RETURNING *",
+        [data]
+    );
+    return deleteUser.rows[0];
+  }
+
+  async updateUser(login,email,id){
+    const changes = await dbconfig.query(
+        "UPDATE USERS SET login=$1, email=$2 WHERE id=$3",
+        [login,email,id]
+    )
+    return changes.rows[0];
+  }
 }
 
 export default new User();
