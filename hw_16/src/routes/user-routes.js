@@ -1,8 +1,9 @@
 import { Router } from "express";
 import User from "../postgres/models/User.js";
 import user from "../services/user-service.js";
+
 import secure from "../services/user-secure.js";
-import { validateForm } from "../middlewars/form-validation.js";
+import {validateAuth, validateChange, validateForm} from "../middlewars/form-validation.js";
 
 const user_router = Router();
 user_router.get("/signup", (req, res) => {
@@ -13,7 +14,7 @@ user_router.get("/signin", (req, res) => {
   res.render("form_auth", { title: "Auth Form" });
 });
 
-user_router.post("/signin", async (req, res) => {
+user_router.post("/signin", validateAuth,async (req, res) => {
   const user = await User.validate_user(req.body);
   if (!user) {
     res.json("Your password or login is not correct");
@@ -70,7 +71,7 @@ user_router.get("/", secure.authenticateToken, (req, res) => {
 user_router.get("/list",async (req,res) => {
   const users = await User.getUsers();
   console.log(users);
-  res.render("userList",{users : users});
+  res.render("userList",{title:"User list",users : users});
 });
 
 user_router.get("/delete/:id", async (req, res) => {
@@ -88,7 +89,7 @@ user_router.get("/change",(req,res) => {
   res.render("change")
 });
 
-user_router.post("/change",async (req,res)  => {
+user_router.post("/change",validateChange,async (req,res)  => {
   const {changeLogin,changeEmail,changeID} = req.body;
   console.log(req.body)
   try{
