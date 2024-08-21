@@ -9,36 +9,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.carsRoutes = void 0;
+exports.colorRoutes = void 0;
 const express_1 = require("express");
-const Car_1 = require("../db/models/Car");
-exports.carsRoutes = (0, express_1.Router)();
-exports.carsRoutes.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    Car_1.Car.getAllCars()
+const Color_1 = require("../db/models/Color");
+exports.colorRoutes = (0, express_1.Router)();
+exports.colorRoutes.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    Color_1.Color.getAllColors()
         .then(data => {
         res.send(data);
-    })
-        .catch((err) => {
-        console.error(err);
-        res.sendStatus(500);
-    });
-}));
-// carsRoutes.get("/cars/:id",async (req,res) => {
-//     try{
-//         const id = req.params.id;
-//         const car = await carsModel.getSelected(id);
-//
-//         res.json(car);
-//     }catch(err){
-//         console.log(err);
-//     }
-//
-// });
-exports.carsRoutes.delete("/:id", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const id = req.params.id;
-    Car_1.Car.deleteCar(id)
-        .then(data => {
-        res.redirect("/");
     })
         .catch(err => {
         console.error(err);
